@@ -66,7 +66,7 @@ public class AuthService {
                         UsernameNotFoundException("User name not found: " + principal.getUsername()));
     }
 
-    private String encodePassword(String password) {
+    public String encodePassword(String password) {
         return passwordEncoder.encode((password));
     }
 

@@ -30,7 +30,8 @@ public class UserService {
 
     public void changePassword(String password) {
         AppUser user = authService.getCurrentUser();
-        user.setPassword(password);
+        user.setPassword(authService.encodePassword(password));
+        repo.save(user);
     }
 
 }
